@@ -1,0 +1,21 @@
+/* Original v29 artwork, type, copy and layout are retained. */
+.original-ball-motion{transform-box:view-box;transform-origin:1546px 200px}
+/* Avoid translucent duplicate clouds. The painted clouds remain in the artwork. */
+.photo-motion-layer .cloud-overlays{display:none}
+.photo-motion-layer .orbit-stroke{opacity:.18;stroke-width:1.5}
+.photo-motion-layer .disco-ping{stroke-width:2;filter:none}
+.photo-motion-layer .disco-twinkle{stroke-width:4;filter:drop-shadow(0 0 5px #fff9)}
+.photo-motion-layer .twinkle-1{animation:refinedTwinkle 3.6s ease-in-out -.4s infinite!important}
+.photo-motion-layer .twinkle-2{animation:refinedTwinkle 4.3s ease-in-out -2.2s infinite!important}
+.photo-motion-layer .twinkle-3{animation:refinedTwinkle 3.9s ease-in-out -1.3s infinite!important}
+.photo-motion-layer .sound-ray{stroke-width:6}
+.photo-motion-layer .ray-a{animation:refinedRay 3s ease-out 0s infinite!important}
+.photo-motion-layer .ray-b{animation:refinedRay 3s ease-out .2s infinite!important}
+.photo-motion-layer .ray-c{animation:refinedRay 3s ease-out .4s infinite!important}
+.photo-motion-layer .emit{stroke-width:3;filter:none}
+.photo-motion-layer .star-glow{transform-box:fill-box;transform-origin:center}
+.photo-motion-layer .star-glow path{opacity:inherit;stroke-width:4;filter:none}
+.photo-motion-layer .heart-aura{stroke-width:3;filter:none}
+@keyframes refinedTwinkle{0%,48%,100%{opacity:0;transform:scale(.6) rotate(-8deg)}60%{opacity:.95;transform:scale(1.15) rotate(8deg)}76%{opacity:.25;transform:scale(.9) rotate(0)}}
+@keyframes refinedRay{0%,30%,100%{opacity:0;stroke-dashoffset:88}44%{opacity:.8}68%{opacity:.5;stroke-dashoffset:0}82%{opacity:0;stroke-dashoffset:-88}}
+@media(prefers-reduced-motion:reduce){.photo-motion-layer{display:none!important}}

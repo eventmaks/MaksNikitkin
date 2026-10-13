@@ -1,0 +1,21 @@
+/* Small click/tap reaction */
+.wow-pop{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:2147483000;
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+  color:#222;
+  font-family:'Yeseva One',Georgia,serif;
+  font-size:clamp(15px,1.25vw,19px);
+  line-height:1;
+  letter-spacing:-.02em;
+  transform-origin:center;
+  will-change:transform,opacity,filter;
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
+}
+@media(max-width:650px){
+  .wow-pop{font-size:16px}
+}

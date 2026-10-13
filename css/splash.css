@@ -1,0 +1,43 @@
+:root{--splash-paper:#f6f3ed;--splash-ink:#181815}
+html,body{min-height:100%}
+.splash-screen{
+  position:fixed;inset:0;z-index:99999;display:grid;place-items:center;overflow:hidden;isolation:isolate;
+  padding:max(24px,env(safe-area-inset-top)) max(22px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(22px,env(safe-area-inset-left));
+  background:rgb(246 243 237/1);color:var(--splash-ink);visibility:visible;pointer-events:auto;opacity:1;transform:translateZ(0);
+  transition:background-color .9s cubic-bezier(.18,.72,.16,1),opacity .8s cubic-bezier(.18,.72,.16,1),visibility 0s linear .95s;
+}
+/* WebGL draws structure inside the smoke; no blur filter is applied to the canvas. */
+.smoke-canvas{
+  position:absolute;inset:0;z-index:5;width:100%;height:100%;pointer-events:none;opacity:1;transform:translateZ(0);
+  mix-blend-mode:normal;will-change:opacity;
+}
+.splash-title{
+  position:relative;z-index:4;max-width:min(1180px,92vw);margin:0;text-align:center;
+  font-family:'Yeseva One',Georgia,'Times New Roman',serif;font-size:clamp(48px,8.6vw,132px);font-weight:400;line-height:.94;letter-spacing:-.052em;text-wrap:balance;
+  opacity:0;filter:blur(5px);transform:translateY(16px) scale(.989);
+  transition:opacity .58s cubic-bezier(.22,.8,.22,1),transform .72s cubic-bezier(.16,1,.3,1),filter .62s ease;
+  will-change:opacity,transform,filter;text-shadow:0 0 18px rgb(246 243 237/.14)
+}
+.splash-word{display:inline-block;white-space:nowrap}.splash-word+.splash-word{margin-left:.25em}
+.splash-letter{display:inline-block;white-space:pre;opacity:1;filter:blur(0);transform:translate3d(0,0,0) rotate(0) scale(1);transform-origin:50% 55%;
+  transition:opacity var(--letter-dur,760ms) cubic-bezier(.16,.62,.18,1) var(--letter-delay,0ms),transform var(--letter-dur,760ms) cubic-bezier(.16,.62,.18,1) var(--letter-delay,0ms),filter var(--letter-dur,760ms) ease var(--letter-delay,0ms);will-change:opacity,transform,filter}
+body.splash-active>header,body.splash-active>main,body.splash-active>footer{
+  opacity:0;transform:translateY(18px) scale(.995);filter:blur(5px);
+  transition:opacity 1.15s cubic-bezier(.18,.72,.16,1),transform 1.2s cubic-bezier(.16,1,.3,1),filter 1.05s ease;will-change:opacity,transform,filter
+}
+body.splash-show .splash-title{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}
+body.splash-leave .splash-title{filter:blur(1.8px);transform:translateY(-4px) scale(1.008)}
+body.splash-leave .splash-letter{opacity:0;filter:blur(8px);transform:translate3d(var(--letter-x,0),var(--letter-y,-28px),0) rotate(var(--letter-rot,0deg)) scale(var(--letter-scale,1.06))}
+body.splash-reveal .splash-screen{background-color:rgb(246 243 237/0);pointer-events:none}
+body.splash-reveal>header,body.splash-reveal>main,body.splash-reveal>footer{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+body.splash-fade .splash-screen{opacity:0}
+body.splash-done .splash-screen{display:none}
+@media(max-width:640px){
+  .splash-title{font-size:clamp(46px,15vw,78px);line-height:.96;max-width:94vw}
+  body.splash-active>header,body.splash-active>main,body.splash-active>footer{transform:translateY(13px) scale(.997)}
+}
+@media(prefers-reduced-motion:reduce){
+  .splash-screen,.splash-title,.splash-letter,body.splash-active>header,body.splash-active>main,body.splash-active>footer{transition-duration:.35s!important;filter:none!important}
+  .splash-title,.splash-letter,body.splash-active>header,body.splash-active>main,body.splash-active>footer{transform:none!important}
+  .smoke-canvas{display:none!important}
+}
