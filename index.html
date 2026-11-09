@@ -264,22 +264,22 @@ input[type=checkbox]{width:18px;height:18px;margin:2px 0 0;accent-color:var(--ac
 .step.done:not(.active){border-color:var(--accent-2)}
 .level-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
 .progress{font-size:13px;color:var(--muted);white-space:nowrap;margin-bottom:.6em}
-.options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:20px}
+.options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:14px;margin-top:20px}
 /* Карточка конкурса: фото на всю карточку */
 .option-card{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;background:#1d0a0d;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .option-card:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(255,214,140,.5),0 16px 40px rgba(255,214,140,.25)}
 .option-card:active{transform:scale(.99)}
 .option-card.is-selected{box-shadow:0 0 0 3px var(--bg),0 0 0 6px var(--accent),0 0 32px rgba(230,176,74,.6)}
 .card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.card-fallback{position:absolute;inset:0;display:flex;flex-direction:column;padding:16px;background:radial-gradient(120% 80% at 30% 15%,#4a1a1c 0%,#1d0a0d 60%,#0c0406 100%);color:var(--text)}
+.card-fallback{position:absolute;inset:0;display:flex;flex-direction:column;padding:12px;background:radial-gradient(120% 80% at 30% 15%,#4a1a1c 0%,#1d0a0d 60%,#0c0406 100%);color:var(--text)}
 .card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.card-fallback .option-number{flex:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
-.card-fallback .tag{background:rgba(11,8,32,.6);color:#fff;padding:8px 14px;font-size:13px;text-align:center}
-.card-title{margin:auto 0 0;padding-right:60px;font-family:var(--display);font-weight:700;font-size:24px;line-height:1.15;color:#fff}
-.card-open{position:absolute;right:16px;bottom:16px;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(11,8,32,.45);color:#fff;font-size:22px;line-height:1}
+.card-fallback .option-number{flex:none;width:34px;height:34px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.card-fallback .tag{min-width:0;background:rgba(11,8,32,.6);color:#fff;padding:5px 10px;font-size:11.5px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-title{margin:auto 0 0;padding:0 0 48px;font-family:var(--display);font-weight:700;font-size:18px;line-height:1.15;color:#fff}
+.card-open{position:absolute;right:12px;bottom:12px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(11,8,32,.45);color:#fff;font-size:18px;line-height:1}
 .has-image .card-fallback{background:linear-gradient(rgba(0,0,0,.4),transparent 22%)}
 .has-image .option-number{background:rgba(0,0,0,.35)}
-.card-badge{position:absolute;left:50%;top:76px;transform:translateX(-50%);white-space:nowrap;padding:7px 14px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;box-shadow:0 0 18px rgba(230,176,74,.7)}
+.card-badge{position:absolute;left:50%;top:58px;transform:translateX(-50%);white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:13px;font-weight:600;box-shadow:0 0 18px rgba(230,176,74,.7)}
 .item-desc{white-space:pre-line}
 
 /* Боковая панель «Ваш вечер» */
