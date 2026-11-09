@@ -200,8 +200,8 @@ body.intro-screen.intro-snow #snow{z-index:4}   /* на новогоднем и�
   linear-gradient(180deg,rgba(0,0,0,.35),transparent 18%,transparent 80%,rgba(0,0,0,.4)),
   repeating-linear-gradient(90deg,#5e0710 0,#a3121c 18px,#d42a33 30px,#a3121c 42px,#5e0710 60px);
   box-shadow:0 0 40px rgba(0,0,0,.6);transition:transform .75s cubic-bezier(.7,0,.3,1)}
-.curtain i:first-child{left:0;transform:translateX(-102%)}
-.curtain i:last-child{right:0;transform:translateX(102%)}
+.curtain i:first-of-type{left:0;transform:translateX(-102%)}
+.curtain i:last-of-type{right:0;transform:translateX(102%)}   /* of-type: последний ребёнок занавеса — ламбрекен <b>, а не штора */
 .curtain.is-closed i{transform:none}
 .curtain b{position:absolute;left:0;right:0;top:0;height:11%;background:repeating-radial-gradient(circle at 50% -40%,#7a0a14 0,#b8161f 30%,#7a0a14 60%);background-size:120px 100%;box-shadow:0 6px 18px rgba(0,0,0,.5);transform:translateY(-110%);transition:transform .5s ease}
 .curtain.is-closed b{transform:none}
